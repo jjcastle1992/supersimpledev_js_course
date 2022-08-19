@@ -23,10 +23,33 @@
       element.innerText = todoTitle;
       document.body.appendChild(element);
       }
+
+      //Simple greeting function that takes a name and says Hello to that individual.
+      function greeting (firstName) {
+        console.log (`Hello ${firstName}`)
+      }
+
+      //Converts 1 string to uppercase and console logs result.
+      function toUpper (ourString) {
+        upperCaseString = ourString.toUpperCase();
+        console.log (upperCaseString);
+      }
+
+      //converts a value in inches to centimeters
+      function lengthToCmConverter (length) {
+        let centimeters = 0;
+        centimeters = (length * 2.54);
+        console.log (centimeters);
+      }
       
       addToDo (todo1);
       addToDo (todo2);
       addToDo (todo3);
+
+      greeting ("Simon");
+      toUpper ("simon");
+
+      lengthToCmConverter (5);
 
     </script>
   </body>
