@@ -3,20 +3,24 @@
   <head>
   </head>
   <body>
-    <div>James Castle<div>
 
     <script>
-      let todo1 = "Get groceries";
-      let todo2 = "Wash car";
-      let todo3 = "Make dinner";
-      let button1 = "Press me";
       let pageTitle = "James' Todo App"
+
+      let todos = ["Get groceries", "Wash car", "Make dinner"];
+      todos.push ("Another todo");
 
       document.title = pageTitle;
      
       let element = document.createElement('button');
-      element.innerText = button1;
+      element.innerText = "Press Me";
       document.body.appendChild(element);
+
+      todos.forEach(function (todoTitle) {
+      let element = document.createElement('div');
+      element.innerText = todoTitle;
+      document.body.appendChild(element);
+      });
       
       function addToDo (todoTitle) {
       let element = document.createElement('div');
@@ -24,6 +28,7 @@
       document.body.appendChild(element);
       }
 
+      //Exercise 6 items
       //Simple greeting function that takes a name and says Hello to that individual.
       function greeting (firstName) {
         console.log (`Hello ${firstName}`)
@@ -41,15 +46,31 @@
         centimeters = (length * 2.54);
         console.log (centimeters);
       }
-      
-      addToDo (todo1);
-      addToDo (todo2);
-      addToDo (todo3);
 
+      //Exercise 6 driver code
       greeting ("Simon");
       toUpper ("simon");
 
       lengthToCmConverter (5);
+
+      //Exercise 7
+      //Intakes an array of strings and converts them into uppercase in a new array
+      function toUpperArray (arrayOfStrings) {
+        let upperCaseArray= [];
+        for (i = 0; i < arrayOfStrings.length; i++) {
+          upperCaseString = arrayOfStrings[i].toUpperCase();
+          upperCaseArray.push(upperCaseString);
+        }
+        
+        for (j = 0; j < upperCaseArray.length; j++) {
+          console.log (upperCaseArray[j]);
+        }
+      }
+
+
+      //Exercise 7 driver code
+      toUpperArray (["hello", "world"]);
+
 
     </script>
   </body>
