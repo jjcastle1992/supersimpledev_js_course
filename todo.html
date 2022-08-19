@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div>James Castle<div>
+
+    <script>
+      let todo1 = "Get groceries";
+      let todo2 = "Wash car";
+      let todo3 = "Make dinner";
+      let button1 = "Press me";
+      let pageTitle = "James' Todo App"
+
+      document.title = pageTitle;
+     
+      let element = document.createElement('button');
+      element.innerText = button1;
+      document.body.appendChild(element);
+      
+      function addToDo (todoTitle) {
+      let element = document.createElement('div');
+      element.innerText = todoTitle;
+      document.body.appendChild(element);
+      }
+      
+      addToDo (todo1);
+      addToDo (todo2);
+      addToDo (todo3);
+
+    </script>
+  </body>
+</html>
