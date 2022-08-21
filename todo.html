@@ -66,11 +66,25 @@
           console.log (upperCaseArray[j]);
         }
       }
+      
+      //7.2 Simple array that takes an input and repeats it twice in the new array
+      function doubleArray (singleArray) {
+        doubledArray = [];
+        for (i = 0; i < singleArray.length; i++) {
+          //push current entry twice
+          for (j = 0; j < 2; j++) {
+            doubledArray.push (singleArray[i]);
+          }
+        }
+        for (k = 0; k < doubledArray.length; k++) {
+          console.log (doubledArray [k]);
+        }
+      }
 
 
       //Exercise 7 driver code
       toUpperArray (["hello", "world"]);
-
+      doubleArray (["testing", "1 2 3"]);
 
     </script>
   </body>
