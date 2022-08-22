@@ -3,18 +3,18 @@
   <head>
   </head>
   <body>
-
+    <input id = "todo-title" type = "text" />
+    <button onclick = "addToDo()">Add Todo</button>
     <script>
       let pageTitle = "James' Todo App"
 
       let todos = ["Get groceries", "Wash car", "Make dinner"];
-      todos.push ("Another todo");
 
       document.title = pageTitle;
      
-      let element = document.createElement('button');
-      element.innerText = "Press Me";
-      document.body.appendChild(element);
+      // let element = document.createElement('button');
+      // element.innerText = "Press Me";
+      // document.body.appendChild(element);
 
       todos.forEach(function (todoTitle) {
       let element = document.createElement('div');
@@ -22,12 +22,15 @@
       document.body.appendChild(element);
       });
       
-      function addToDo (todoTitle) {
-      let element = document.createElement('div');
-      element.innerText = todoTitle;
-      document.body.appendChild(element);
+      function addToDo () {
+        let textbox = document.getElementById('todo-title');
+        let title = textbox.value;
+        todos.push (title);
+      // let element = document.createElement('div');
+      // element.innerText = todoTitle;
+      // document.body.appendChild(element);
       }
-      
+
     </script>
   </body>
 </html>
