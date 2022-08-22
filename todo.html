@@ -54,7 +54,7 @@
       lengthToCmConverter (5);
 
       //Exercise 7
-      //Intakes an array of strings and converts them into uppercase in a new array
+      //Void function that Intakes an array of strings and converts them into uppercase in a new array
       function toUpperArray (arrayOfStrings) {
         let upperCaseArray= [];
         for (i = 0; i < arrayOfStrings.length; i++) {
@@ -67,7 +67,7 @@
         }
       }
       
-      //7.2 Simple array that takes an input and repeats it twice in the new array
+      //7.2 Void function that takes an input array and repeats each element twice in the new array
       function doubleArray (singleArray) {
         doubledArray = [];
         for (i = 0; i < singleArray.length; i++) {
@@ -81,10 +81,24 @@
         }
       }
 
+      //7.3 Void Function that will take an array of numbers and console log the sum
+      function arraySum (numbersArray) {
+        sumOfNums = 0;
+        for (i = 0; i < numbersArray.length; i++) {
+          // console.log (`Current Sum: ${sumOfNums}`);
+          // console.log(`Current num to be added: ${numbersArray[i]}`);
+          sumOfNums += numbersArray[i];
+        }
+        // console.log (`Final Sum: ${sumOfNums}`);
+        console.log (sumOfNums);
+      }
 
       //Exercise 7 driver code
       toUpperArray (["hello", "world"]);
       doubleArray (["testing", "1 2 3"]);
+      arraySum ([1,2,3]);
+      arraySum ([5,-2,7,0]);
+      arraySum ([1,5,3,2]);
 
     </script>
   </body>
