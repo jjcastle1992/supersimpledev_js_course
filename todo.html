@@ -6,6 +6,7 @@
     <input id = "todo-title" type = "text" />
     <button onclick = "addToDo()">Add Todo</button>
     <button id = "todo-button" onclick = "changeToDone()">To Do</button>
+    <button onclick = "addToPage()">Add to Page</button>
 
     <div id = "counter">0</div>
     <button onclick = "increaseCount()">Up</button>
@@ -53,6 +54,15 @@
         count -= 1;
         let currentCount = document.getElementById ('counter');
         currentCount.innerText = count;
+      }
+
+      function addToPage () {
+        let textbox = document.getElementById('todo-title');
+        let title = textbox.value;
+        
+        let div = document.createElement ('div');
+        div.innnerText = title;
+        document.body.appendChild(div);
       }
 
     </script>
