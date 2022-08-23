@@ -11,12 +11,15 @@
     <div id = "counter">0</div>
     <button onclick = "increaseCount()">Up</button>
     <button onclick = "decreaseCount ()">Down</button>
+
+    <div id = "todo-list"></div>
     <script>
       let count = 0;
 
       let pageTitle = "James' Todo App"
 
       let todos = ["Get groceries", "Wash car", "Make dinner"];
+      render ();
 
       document.title = pageTitle;
      
@@ -24,43 +27,58 @@
       // element.innerText = "Press Me";
       // document.body.appendChild(element);
 
-      todos.forEach(function (todoTitle) {
-      let element = document.createElement('div');
-      element.innerText = todoTitle;
-      document.body.appendChild(element);
-      });
+        // todos.forEach(function (todoTitle) {
+        // let element = document.createElement('div');
+        // element.innerText = todoTitle;
+        // let todoList = document.getElementById ('todo-list');
+        // todoList.appendChild(element);
+        // });
       
       function addToDo () {
-        let textbox = document.getElementById('todo-title');
-        let title = textbox.value;
+        const textbox = document.getElementById('todo-title');
+        const title = textbox.value;
         todos.push (title);
+
+        render ();
       // let element = document.createElement('div');
       // element.innerText = todoTitle;
       // document.body.appendChild(element);
       }
 
+      function render () {
+        //reset our list
+        document.getElementById('todo-list').innerHTML = '';
+
+        todos.forEach(function (todoTitle) {
+          let element = document.createElement('div');
+          element.innerText = todoTitle;
+          let todoList = document.getElementById ('todo-list');
+          todoList.appendChild(element);
+        });
+      }
+
       function changeToDone () {
-        let button = document.getElementById ('todo-button');
+        const button = document.getElementById ('todo-button');
         button.innerText = "Done";
       }
 
       function increaseCount () {
         count += 1;
-        let currentCount = document.getElementById ('counter');
+        const currentCount = document.getElementById ('counter');
         currentCount.innerText = count;
       }
 
       function decreaseCount () {
         count -= 1;
-        let currentCount = document.getElementById ('counter');
+        const currentCount = document.getElementById ('counter');
         currentCount.innerText = count;
       }
 
       function addToPage () {
-        let textbox = document.getElementById('todo-title');
-        let title = textbox.value;
+        const textbox = document.getElementById('todo-title');
+        const title = textbox.value;
 
-        let div = document.createElement('div');
+        const div = document.createElement('div');
         div.innerText = title;
         document.body.appendChild(div);
       }
